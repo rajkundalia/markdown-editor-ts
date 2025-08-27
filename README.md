@@ -19,22 +19,23 @@ A feature-rich markdown editor built with Next.js, TypeScript, and TailwindCSS f
 
 ## Installation & Setup
 
-1. **Create a new Next.js project:**
+1. **Create a new Next.js project:** [If you are learning and not cloning directly]
 ```bash
 npx create-next-app@14.0.0 markdown-editor --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
 cd markdown-editor
 ```
 
-2. **Install required dependencies:**
+2. **Install required dependencies:** [If you are learning and not cloning directly]
 ```bash
 npm install react-markdown@9.0.1 remark-gfm@4.0.0 react-syntax-highlighter@15.5.0
 npm install --save-dev @types/react-syntax-highlighter@15.5.11
 ```
 
-3. **Replace the default files with the provided components**
+3. **Replace the default files with the provided components** [If you are learning and not cloning directly]
 
-4. **Run the development server:**
+4. **Perform an npm install and run the development server:**
 ```bash
+npm install
 npm run dev
 ```
 
