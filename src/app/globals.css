@@ -2,26 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Prose customization for better dark mode */
+.prose-gray {
+  --tw-prose-body: theme(colors.gray.700);
+  --tw-prose-headings: theme(colors.gray.900);
+  --tw-prose-lead: theme(colors.gray.600);
+  --tw-prose-links: theme(colors.blue.600);
+  --tw-prose-bold: theme(colors.gray.900);
+  --tw-prose-counters: theme(colors.gray.500);
+  --tw-prose-bullets: theme(colors.gray.300);
+  --tw-prose-hr: theme(colors.gray.200);
+  --tw-prose-quotes: theme(colors.gray.900);
+  --tw-prose-quote-borders: theme(colors.gray.200);
+  --tw-prose-captions: theme(colors.gray.500);
+  --tw-prose-code: theme(colors.gray.900);
+  --tw-prose-pre-code: theme(colors.gray.200);
+  --tw-prose-pre-bg: theme(colors.gray.800);
+  --tw-prose-th-borders: theme(colors.gray.300);
+  --tw-prose-td-borders: theme(colors.gray.200);
+}
+
+.prose-gray.dark\:prose-invert {
+  --tw-prose-body: theme(colors.gray.300);
+  --tw-prose-headings: theme(colors.gray.100);
+  --tw-prose-lead: theme(colors.gray.400);
+  --tw-prose-links: theme(colors.blue.400);
+  --tw-prose-bold: theme(colors.gray.100);
+  --tw-prose-counters: theme(colors.gray.400);
+  --tw-prose-bullets: theme(colors.gray.600);
+  --tw-prose-hr: theme(colors.gray.700);
+  --tw-prose-quotes: theme(colors.gray.100);
+  --tw-prose-quote-borders: theme(colors.gray.700);
+  --tw-prose-captions: theme(colors.gray.400);
+  --tw-prose-code: theme(colors.gray.100);
+  --tw-prose-pre-code: theme(colors.gray.300);
+  --tw-prose-pre-bg: theme(colors.gray.900);
+  --tw-prose-th-borders: theme(colors.gray.600);
+  --tw-prose-td-borders: theme(colors.gray.700);
 }

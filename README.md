@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js TypeScript Markdown Editor
 
-## Getting Started
+A feature-rich markdown editor built with Next.js, TypeScript, and TailwindCSS featuring live preview, toolbar formatting, file import/export, and theme switching.
 
-First, run the development server:
+## Features
 
+✅ **Two-pane layout** with markdown input and live preview  
+✅ **Comprehensive toolbar** with formatting buttons  
+✅ **Syntax highlighting** in code blocks  
+✅ **File import/export** (.md files)  
+✅ **Local storage persistence**  
+✅ **Light/Dark theme toggle**  
+✅ **Full TypeScript support**  
+
+## Prerequisites
+
+- Node.js 18.17.0 or higher
+- npm 9.0.0 or higher
+
+## Installation & Setup
+
+1. **Create a new Next.js project:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@14.0.0 markdown-editor --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+cd markdown-editor
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install required dependencies:**
+```bash
+npm install react-markdown@9.0.1 remark-gfm@4.0.0 react-syntax-highlighter@15.5.0
+npm install --save-dev @types/react-syntax-highlighter@15.5.11
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Replace the default files with the provided components**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Run the development server:**
+```bash
+npm run dev
+```
 
-## Learn More
+5. **Open your browser and navigate to:**
+```
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Editor.tsx
+│   ├── Preview.tsx
+│   ├── Toolbar.tsx
+│   ├── ThemeToggle.tsx
+│   └── MarkdownEditor.tsx
+├── hooks/
+│   └── useLocalStorage.ts
+└── utils/
+    └── fileUtils.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+### Toolbar Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Bold/Italic**: Select text and click buttons or use with empty selection
+- **Headings**: H1-H3 formatting
+- **Lists**: Ordered and unordered lists
+- **Blockquotes**: Quote formatting
+- **Code blocks**: Fenced code blocks with syntax highlighting
+- **Tables**: Markdown table skeleton
+- **Links**: URL link formatting
+- **Undo/Redo**: Browser native undo/redo support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### File Operations
+
+- **Export**: Download current content as `.md` file
+- **Import**: Load `.md` files from your computer
+- **Auto-save**: Content automatically saved to localStorage
+
+### Theme Toggle
+
+- Switch between light and dark themes
+- Theme preference saved to localStorage
+
+## Development
+
+```bash
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Lint code
+npm run lint
+```
